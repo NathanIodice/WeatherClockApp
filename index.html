@@ -7,16 +7,19 @@
     <title>Document</title>
 </head>
 <body>
-
+    <header>
+        <div class="weatherImg" id="weatherImg"><div id="time"></div></div>
+    </header>
     <main>
-        <div class="location box"><h2>Location</h2><hr><p id="location"></p></div>
-        <div class="weather box"><h2>Weather Contidion</h2><p id="weatherCondition"></p></div>
-        <div class="temp box"><h2>Temperature</h2><div class="tempContainer"><p id="temp"></p><p class="unit"> &#8451</p></div></div>
-        <div class="timezone box"><h2>Timezone</h2><p id="timezoneInfo"></p></div>
+        <div class="location box"><h2>Location</h2><hr><p class="line" id="location"></p></div>
+        <div class="weather box"><h2>Weather Contidion</h2><p class="line" id="weatherCondition"></p></div>
+        <div class="temp box"><h2>Temperature</h2><div class="tempContainer line"><p id="temp"></p><p class="unit"> &#8451</p></div></div>
+        <div class="timezone box"><h2>Timezone</h2><p class="line"id="timezoneInfo"></p></div>
     </main>
   
 
-    <script src="script.js"></script>
     <script src="weatherAPI.js"></script>
+    <script src="script.js"></script>
+
 </body>
 </html>

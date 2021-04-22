@@ -4,8 +4,12 @@ let lat
 const loc = document.getElementById("location")
 const weatherCondition = document.getElementById("weatherCondition")
 const temp = document.getElementById("temp")
-
+let weather = {
+    main: "",
+    description: ""
+}
 getLocation()
+
 
 function getLocation()
 {
@@ -24,12 +28,21 @@ function getPosition(position)
   lon = position.coords.longitude
   lat = position.coords.latitude
 
-  fetch(`https://api.openweathermap.org/data/2.5/weather?units=metric&lat=${lat}&lon=${lon}&appid=${key}`)
-.then(res => {return res.json();})
-.then(data => {
-    loc.innerText = `${data.name}`
-    weatherCondition.innerText = `${data.weather[0].main} / ${data.weather[0].description}`
-    temp.innerHTML = `${data.main.temp}`
-})
+    checkWeather()
 
+}
+
+function checkWeather() {
+    fetch(`https://api.openweathermap.org/data/2.5/weather?units=metric&lat=${lat}&lon=${lon}&appid=${key}`)
+    .then(res => {return res.json();})
+    .then(data => {
+        loc.innerText = `${data.name}`
+        weatherCondition.innerText = `${data.weather[0].main} / ${data.weather[0].description}`
+        temp.innerHTML = `${data.main.temp}`
+
+        weather.main =  `${data.weather[0].main}`
+        weather.description =  `${data.weather[0].description.replace(" ", "_")}`
+        checkWeatherImg()
+    })
+    
 }

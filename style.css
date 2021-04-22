@@ -1,12 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio&display=swap');
+
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Antonio', sans-serif;
+}
+
+#time {
+    font-size: 10vw;
+    color: white;
+    padding: 5%;
+}
+
+.weatherImg{
+    background-image:linear-gradient(to bottom, rgba(255,255,255,0) 50%, rgb(255, 255, 255)), url("img/clear_sky.jpg");
+    height: 50vh;
+    width: 100vw;
+    background-size: cover;
+    background-position: center;
 }
 
 main{
     display: flex;
     flex-wrap: wrap;
-    border: 2px black solid;
+    height: 49.4vh;
 }
 
 .box {
@@ -19,6 +36,8 @@ main{
     margin: 4px;
     padding: 20px;
     font-size: 16px;
+    letter-spacing: 4px;
+    color: rgb(165, 165, 165);
 }
 
 
@@ -30,19 +49,17 @@ main{
 
 }
 
-.box h2:after {
-    content: "";
-    position: absolute;
-    bottom:0;
-    left: 35%;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.306);
-    width: 30%;
-    border-radius: 20px;
+
+.line {
+    width: 75%;
+    text-align: center;
+    border-top: 2px solid rgba(0, 0, 0, 0.082);
 }
 
 .tempContainer{
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 .tempContainer .unit {
     position: relative;
